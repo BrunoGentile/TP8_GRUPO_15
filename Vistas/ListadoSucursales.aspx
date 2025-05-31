@@ -149,7 +149,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style41" colspan="4">
-                        <asp:GridView ID="GridView1" runat="server">
+                        <asp:GridView ID="gvSucursales" runat="server">
                         </asp:GridView>
                     </td>
                     <td class="auto-style17">&nbsp;</td>
