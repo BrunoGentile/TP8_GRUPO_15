@@ -21,10 +21,10 @@
             height: 23px;
         }
         .auto-style13 {
-            width: 79px;
+            width: 190px;
         }
         .auto-style14 {
-            width: 79px;
+            width: 190px;
             height: 23px;
         }
     </style>
@@ -56,7 +56,7 @@
                     <td class="auto-style5"></td>
                 </tr>
                 <tr>
-                    <td class="auto-style14"></td>
+                    <td class="auto-style14"><strong>Eliminar Sucursal</strong></td>
                     <td class="auto-style12"></td>
                     <td class="auto-style12"></td>
                     <td class="auto-style12"></td>
@@ -75,7 +75,9 @@
                     <td class="auto-style13">&nbsp;</td>
                     <td class="auto-style11">&nbsp;</td>
                     <td class="auto-style11">&nbsp;</td>
-                    <td class="auto-style11">&nbsp;</td>
+                    <td class="auto-style11">
+                        <asp:Button ID="btnElminar" runat="server" Text="Eliminar" />
+                    </td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
