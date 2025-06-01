@@ -15,7 +15,14 @@ namespace Vistas
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                NegocioSucursales negocioSucursales = new NegocioSucursales();
+                // OBTENGO DATA TABLE CON TODAS LAS SUCURSALES
+                gvSucursales.DataSource = negocioSucursales.ObtenerSucursales();
+                // ACTUALIZO EL GRID VIEW CON LOS DATOS OBTENIDOS
+                gvSucursales.DataBind();
+            }
         }
 
         protected void btn_MostrarTodo_Click(object sender, EventArgs e)
