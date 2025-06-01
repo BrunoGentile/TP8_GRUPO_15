@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    internal class Sucursales
+    public class Sucursales
     {
             //Atributos privados
             private int id_sucursal;
