@@ -28,18 +28,25 @@
             height: 23px;
         }
         .auto-style7 {
-            width: 100px;
+            width: 154px;
         }
         .auto-style8 {
             height: 23px;
-            width: 100px;
+            width: 154px;
         }
         .auto-style9 {
-            width: 215px;
+            width: 168px;
         }
         .auto-style10 {
             height: 23px;
-            width: 215px;
+            width: 168px;
+        }
+        .auto-style11 {
+            width: 141px;
+        }
+        .auto-style12 {
+            height: 23px;
+            width: 141px;
         }
     </style>
 </head>
@@ -48,59 +55,67 @@
         <div>
             <table class="auto-style1">
                 <tr>
+                    <td class="auto-style4"></td>
+                    <td class="auto-style8"></td>
+                    <td class="auto-style10"></td>
+                    <td class="auto-style6"></td>
+                    <td class="auto-style12"></td>
+                    <td class="auto-style5"></td>
+                </tr>
+                <tr>
+                    <td class="auto-style4"></td>
+                    <td class="auto-style8"></td>
+                    <td class="auto-style10">
+                        <asp:HyperLink ID="hlAgregarSucursal" runat="server">Agregar Sucursal</asp:HyperLink>
+                    </td>
+                    <td class="auto-style6">
+                        <asp:HyperLink ID="hlListadoDeSucursales" runat="server">Listado de Sucursales</asp:HyperLink>
+                    </td>
+                    <td class="auto-style12">
+                        <asp:HyperLink ID="hlEliminarSucursal" runat="server">Eliminar Sucursal</asp:HyperLink>
+                    </td>
+                    <td class="auto-style5"></td>
+                </tr>
+                <tr>
+                    <td class="auto-style4"></td>
+                    <td class="auto-style8"><strong>GRUPO N°</strong></td>
+                    <td class="auto-style10"></td>
+                    <td class="auto-style6"></td>
+                    <td class="auto-style12"></td>
+                    <td class="auto-style5"></td>
+                </tr>
+                <tr>
                     <td class="auto-style2">&nbsp;</td>
                     <td class="auto-style7">&nbsp;</td>
                     <td class="auto-style9">&nbsp;</td>
                     <td class="auto-style3">&nbsp;</td>
+                    <td class="auto-style11">&nbsp;</td>
                     <td>&nbsp;</td>
-                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="auto-style4"></td>
+                    <td class="auto-style8"><strong>Agregar Sucursal</strong></td>
+                    <td class="auto-style10"></td>
+                    <td class="auto-style6"></td>
+                    <td class="auto-style12"></td>
+                    <td class="auto-style5"></td>
                 </tr>
                 <tr>
                     <td class="auto-style4"></td>
                     <td class="auto-style8"></td>
                     <td class="auto-style10"></td>
                     <td class="auto-style6"></td>
-                    <td class="auto-style5"></td>
-                    <td class="auto-style5"></td>
-                </tr>
-                <tr>
-                    <td class="auto-style4"></td>
-                    <td class="auto-style8"></td>
-                    <td class="auto-style10"></td>
-                    <td class="auto-style6"></td>
-                    <td class="auto-style5"></td>
+                    <td class="auto-style12"></td>
                     <td class="auto-style5"></td>
                 </tr>
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style7">&nbsp;</td>
-                    <td class="auto-style9">&nbsp;</td>
+                    <td class="auto-style7">Nombre Sucursal:</td>
+                    <td class="auto-style9">
+                        <asp:TextBox ID="TB_NombreSucursal" runat="server" Width="169px"></asp:TextBox>
+                    </td>
                     <td class="auto-style3">&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style7">&nbsp;</td>
-                    <td class="auto-style9">&nbsp;</td>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style7">&nbsp;</td>
-                    <td class="auto-style9">&nbsp;</td>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style7">&nbsp;</td>
-                    <td class="auto-style9">&nbsp;</td>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style11">&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
@@ -110,7 +125,7 @@
                         <asp:TextBox ID="TB_Descripcion" runat="server" Width="170px"></asp:TextBox>
                     </td>
                     <td class="auto-style3">&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style11">&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
@@ -122,7 +137,7 @@
                         </asp:DropDownList>
                     </td>
                     <td class="auto-style3">&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style11">&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
@@ -132,7 +147,7 @@
                         <asp:TextBox ID="TB_Direccion" runat="server" Width="170px"></asp:TextBox>
                     </td>
                     <td class="auto-style6"></td>
-                    <td class="auto-style5"></td>
+                    <td class="auto-style12"></td>
                     <td class="auto-style5"></td>
                 </tr>
                 <tr>
@@ -140,7 +155,7 @@
                     <td class="auto-style7">&nbsp;</td>
                     <td class="auto-style9">&nbsp;</td>
                     <td class="auto-style3">&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style11">&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
@@ -150,7 +165,7 @@
                         <asp:Button ID="BTN_Aceptar" runat="server" Text="Aceptar" />
                     </td>
                     <td class="auto-style3">&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style11">&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
             </table>
