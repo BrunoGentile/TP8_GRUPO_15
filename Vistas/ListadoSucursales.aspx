@@ -108,7 +108,7 @@
                 <tr>
                     <td class="auto-style31" colspan="7">
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <asp:HyperLink ID="hl_AgregarSucursal" runat="server">Agregar Sucursales</asp:HyperLink>
+                        <asp:HyperLink ID="hl_AgregarSucursal" runat="server" NavigateUrl="~/AgregarSucursal - Copia.aspx">Agregar Sucursales</asp:HyperLink>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <asp:HyperLink ID="hl_ListarSucursales" runat="server">Listado de Sucursales</asp:HyperLink>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
