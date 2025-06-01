@@ -112,7 +112,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <asp:HyperLink ID="hl_ListarSucursales" runat="server">Listado de Sucursales</asp:HyperLink>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <asp:HyperLink ID="hl_EliminarSucursales" runat="server">Eliminar Sucursal</asp:HyperLink>
+                        <asp:HyperLink ID="hl_EliminarSucursales" runat="server" NavigateUrl="EliminarSucursal.aspx">Eliminar Sucursal</asp:HyperLink>
                     </td>
                 </tr>
                 <tr>
@@ -146,6 +146,19 @@
                     <td class="auto-style10"></td>
                     <td class="auto-style10"></td>
                     <td class="auto-style19"></td>
+                </tr>
+                <tr>
+                    <td class="auto-style25">&nbsp;</td>
+                    <td class="auto-style18">
+                        <asp:RegularExpressionValidator ID="rev_valorNumerico" runat="server" ControlToValidate="TextBox1" ErrorMessage="*" ValidationExpression="^[0-9]+$">Ingresar un valor numérico</asp:RegularExpressionValidator>
+                    </td>
+                    <td class="auto-style39">
+                        &nbsp;</td>
+                    <td class="auto-style2">
+                        &nbsp;</td>
+                    <td class="auto-style10">&nbsp;</td>
+                    <td class="auto-style10">&nbsp;</td>
+                    <td class="auto-style19">&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style41" colspan="4">

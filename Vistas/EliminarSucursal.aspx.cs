@@ -5,6 +5,10 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
+using System.Data;
+using Entidades;
+using Negocio;
+
 namespace Vistas
 {
     public partial class EliminarSucursal : System.Web.UI.Page
