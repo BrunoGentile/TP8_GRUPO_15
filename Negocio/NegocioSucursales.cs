@@ -17,7 +17,7 @@ namespace Negocio
 
         public DataTable ObtenerSucursales()
         {
-            
+
             DataTable DTSucursales = new DataTable();
 
             gestionSucursales.ObtenerSucursales(DTSucursales);
@@ -25,5 +25,15 @@ namespace Negocio
             return DTSucursales;
         }
 
+        public void ObtenerProvincias(DataTable DTProvincia )
+        {
+
+          //  DataTable DTProvincia = new DataTable();
+
+            gestionSucursales.ObtenerProvincias(DTProvincia);
+
+          //  return DTProvincia;
+
+        }
     }
 }
