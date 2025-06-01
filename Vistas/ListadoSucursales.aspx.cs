@@ -18,6 +18,16 @@ namespace Vistas
 
         }
 
-     
+        protected void btn_MostrarTodo_Click(object sender, EventArgs e)
+        {
+
+            NegocioSucursales negocioSucursales = new NegocioSucursales();
+
+            // OBTENGO DATA TABLE CON TODAS LAS SUCURSALES
+            gvSucursales.DataSource = negocioSucursales.ObtenerSucursales();
+            // ACTUALIZO EL GRID VIEW CON LOS DATOS OBTENIDOS
+            gvSucursales.DataBind();
+
+        }
     }
 }

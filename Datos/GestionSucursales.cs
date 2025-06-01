@@ -19,7 +19,7 @@ namespace Datos
         Sucursales Sucursal = new Sucursales();
 
         // CONSTRUCTOR VACÍO
-        GestionSucursales() { 
+        public GestionSucursales() { 
             
         }
 
@@ -49,6 +49,21 @@ namespace Datos
             comando.ExecuteNonQuery();
             conexion.Close();
         }
- 
+
+        public void ObtenerSucursales( DataTable DTSucursales )
+        {
+            
+            SqlConnection conexion = new SqlConnection(Conexion);
+            conexion.Open();
+
+            string ConsultaSQL = "SELECT Id_Sucursal, NombreSucursal, DescripcionSucursal, DescripcionProvincia , DireccionSucursal FROM Sucursal INNER JOIN Provincia ON Id_Provincia = Id_ProvinciaSucursal";
+            
+            SqlCommand comando = new SqlCommand(ConsultaSQL, conexion);
+            SqlDataAdapter adaptador = new SqlDataAdapter(comando);
+            adaptador.Fill(DTSucursales);
+
+            conexion.Close();
+        }
+
     }
 }
