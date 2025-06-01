@@ -114,7 +114,9 @@
                     <td class="auto-style9">
                         <asp:TextBox ID="TB_NombreSucursal" runat="server" Width="169px"></asp:TextBox>
                     </td>
-                    <td class="auto-style3">&nbsp;</td>
+                    <td class="auto-style3">
+                        <asp:RequiredFieldValidator ID="rfvSucursal" runat="server" ControlToValidate="TB_NombreSucursal">Ingrese un nombre de sucursal</asp:RequiredFieldValidator>
+                    </td>
                     <td class="auto-style11">&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
@@ -124,7 +126,9 @@
                     <td class="auto-style9">
                         <asp:TextBox ID="TB_Descripcion" runat="server" Width="170px"></asp:TextBox>
                     </td>
-                    <td class="auto-style3">&nbsp;</td>
+                    <td class="auto-style3">
+                        <asp:RequiredFieldValidator ID="rfvDescripcion" runat="server" ControlToValidate="TB_Descripcion">Ingrese una descripcion</asp:RequiredFieldValidator>
+                    </td>
                     <td class="auto-style11">&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
@@ -146,7 +150,9 @@
                     <td class="auto-style10">
                         <asp:TextBox ID="TB_Direccion" runat="server" Width="170px"></asp:TextBox>
                     </td>
-                    <td class="auto-style6"></td>
+                    <td class="auto-style6">
+                        <asp:RequiredFieldValidator ID="rfvDireccion" runat="server" ControlToValidate="TB_Direccion">Ingrese una direccion</asp:RequiredFieldValidator>
+                    </td>
                     <td class="auto-style12"></td>
                     <td class="auto-style5"></td>
                 </tr>
