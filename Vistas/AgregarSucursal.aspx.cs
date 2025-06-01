@@ -17,5 +17,10 @@ namespace Vistas
         {
 
         }
+
+        protected void BTN_Aceptar_Click(object sender, EventArgs e)
+        {
+            lblSucursalAgregada.Text = "La sucursal se ha agregado con éxito";
+        }
     }
 } 

@@ -56,7 +56,8 @@ namespace Datos
             SqlConnection conexion = new SqlConnection(Conexion);
             conexion.Open();
 
-            string ConsultaSQL = "SELECT Id_Sucursal, NombreSucursal, DescripcionSucursal, DescripcionProvincia , DireccionSucursal FROM Sucursal INNER JOIN Provincia ON Id_Provincia = Id_ProvinciaSucursal";
+            string ConsultaSQL = "SELECT Id_Sucursal, NombreSucursal, DescripcionSucursal, DescripcionProvincia , DireccionSucursal " +
+                "FROM Sucursal INNER JOIN Provincia ON Id_Provincia = Id_ProvinciaSucursal";
             
             SqlCommand comando = new SqlCommand(ConsultaSQL, conexion);
             SqlDataAdapter adaptador = new SqlDataAdapter(comando);
