@@ -82,13 +82,17 @@
                     <td class="auto-style5"></td>
                 </tr>
                 <tr>
-                    <td class="auto-style13">&nbsp;</td>
-                    <td class="auto-style11">&nbsp;</td>
-                    <td class="auto-style17">&nbsp;</td>
-                    <td class="auto-style15">&nbsp;</td>
-                    <td class="auto-style11">&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style14"></td>
+                    <td class="auto-style12">
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator" runat="server" ControlToValidate="txtIDSucursal" ForeColor="#CC0000" ValidationExpression="^\d+$">Solo valores numéricos</asp:RegularExpressionValidator>
+                        <br />
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtIDSucursal" ForeColor="#CC0000">Ingrese un valor</asp:RequiredFieldValidator>
+                    </td>
+                    <td class="auto-style18"></td>
+                    <td class="auto-style16"></td>
+                    <td class="auto-style12"></td>
+                    <td class="auto-style5"></td>
+                    <td class="auto-style5"></td>
                 </tr>
                 <tr>
                     <td class="auto-style13">
@@ -128,23 +132,23 @@
                     <td class="auto-style5"></td>
                 </tr>
                 <tr>
-                    <td class="auto-style13">&nbsp;</td>
-                    <td class="auto-style11">&nbsp;</td>
-                    <td class="auto-style17">
-                        &nbsp;</td>
-                    <td class="auto-style15">
-                        &nbsp;</td>
-                    <td class="auto-style11">&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style14"></td>
+                    <td class="auto-style12"></td>
+                    <td class="auto-style18">
+                        </td>
+                    <td class="auto-style16">
+                        </td>
+                    <td class="auto-style12"></td>
+                    <td class="auto-style5"></td>
+                    <td class="auto-style5"></td>
                 </tr>
                 <tr>
-                    <td class="auto-style13">
-                        &nbsp;</td>
-                    <td class="auto-style11">&nbsp;</td>
-                    <td class="auto-style17">&nbsp;</td>
-                    <td class="auto-style15">&nbsp;</td>
-                    <td class="auto-style11">&nbsp;</td>
+                    <td class="auto-style14">
+                        </td>
+                    <td class="auto-style12"></td>
+                    <td class="auto-style18"></td>
+                    <td class="auto-style16"></td>
+                    <td class="auto-style12"></td>
                 </tr>
                 <tr>
                     <td class="auto-style14"></td>
