@@ -181,9 +181,7 @@
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
                     <td class="auto-style7">
-                        <asp:DropDownList ID="DropDownList2" runat="server" AutoPostBack="True">
-                        </asp:DropDownList>
-                    </td>
+                        &nbsp;</td>
                     <td class="auto-style9">
                         &nbsp;</td>
                     <td class="auto-style3">&nbsp;</td>
