@@ -72,7 +72,12 @@ namespace Vistas
 
         protected void DDL_FiltrarProvincia_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Tu lógica aquí
+
+            int idProvincia = Convert.ToInt32(DDL_FiltrarProvincia.SelectedValue);
+            NegocioSucursales negocio = new NegocioSucursales();
+            gvSucursales.DataSource = negocio.ObtenerSucursalesPorProvincia(idProvincia);
+            gvSucursales.DataBind();
+            TextBox1.Text = string.Empty;
         }
 
         protected void btn_Filtrar_Click(object sender, EventArgs e)

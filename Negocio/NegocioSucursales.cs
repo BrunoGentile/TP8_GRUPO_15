@@ -38,6 +38,11 @@ namespace Negocio
 
         }
 
+        public DataTable ObtenerSucursalesPorProvincia(int idProvincia)
+        {
+            return gestionSucursales.ObtenerSucursalesPorProvincia(idProvincia);
+        }
+
         public DataTable OrdenDescendente(string orden)
         {
             DataTable DtSucursales = new DataTable();

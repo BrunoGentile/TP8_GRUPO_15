@@ -112,11 +112,10 @@ namespace Datos
             SqlCommand sqlCommand = new SqlCommand("DELETE FROM Sucursal WHERE Id_Sucursal = @Id_Sucursal", sqlConnection);
             sqlCommand.Parameters.AddWithValue("@Id_Sucursal", idSucursal);
 
-
             int filasAfectadas = sqlCommand.ExecuteNonQuery();
-            return filasAfectadas;
             sqlConnection.Close();
 
+            return filasAfectadas;
         }
 
         public void ObtenerSucursales(DataTable DTSucursales)
@@ -150,6 +149,22 @@ namespace Datos
             conexion.Close();
         }
 
+        //Obtiene las sucursales filtradas por provincia
+        public DataTable ObtenerSucursalesPorProvincia(int idProvincia)
+        {
+            DataTable DTSucursales = new DataTable();
+            using (SqlConnection conexion = new SqlConnection(Conexion))
+            {
+                string consultaSQL = "SELECT Id_Sucursal, NombreSucursal, DescripcionSucursal, DescripcionProvincia, DireccionSucursal " +
+                                     "FROM Sucursal INNER JOIN Provincia ON Id_Provincia = Id_ProvinciaSucursal " +
+                                     "WHERE Id_ProvinciaSucursal = @IdProvincia";
+                SqlCommand comando = new SqlCommand(consultaSQL, conexion);
+                comando.Parameters.AddWithValue("@IdProvincia", idProvincia);
+                SqlDataAdapter adaptador = new SqlDataAdapter(comando);
+                adaptador.Fill(DTSucursales);
+            }
+            return DTSucursales;
+        }
 
         //existencia de id de sucursal para eliminarla
         public bool ExisteSucursal(int idSucursal)
