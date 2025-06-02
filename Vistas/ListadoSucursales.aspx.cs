@@ -36,5 +36,15 @@ namespace Vistas
             gvSucursales.DataBind();
 
         }
+
+        protected void btn_FiltrarDesc_Click(object sender, EventArgs e)
+        {
+
+            Session["ordenSucursales"] = "DESC";
+            NegocioSucursales neg = new NegocioSucursales();
+            gvSucursales.DataSource = neg.OrdenDescendente(Session["ordenSucursales"].ToString());
+            gvSucursales.DataBind();
+        }
+
     }
 }

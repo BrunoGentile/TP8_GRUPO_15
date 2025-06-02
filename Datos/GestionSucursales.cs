@@ -51,11 +51,11 @@ namespace Datos
 
             conexion.Open();
 
-            string ConsultaSQL = "INSERT INTO Sucursales (IdSucursal, NombreSucursal, DescripcionSucursal, id_provinciaSucursal, DireccionSucursal) " + 
-                "VALUES (@IdSucursal, @Nombre, @Descripcion, @IdProvincia, @Direccion)";
+            string ConsultaSQL = "INSERT INTO Sucursal (NombreSucursal, DescripcionSucursal, Id_ProvinciaSucursal, DireccionSucursal) " + 
+                "VALUES ( @Nombre, @Descripcion, @IdProvincia, @Direccion)";
             SqlCommand comando = new SqlCommand(ConsultaSQL, conexion);
 
-            comando.Parameters.AddWithValue("IdSucursal", ObtenerMaximo()+1);
+       
             comando.Parameters.AddWithValue("@Nombre", NuevaSucursal.getNombreSucursal());
             comando.Parameters.AddWithValue("@Descripcion", NuevaSucursal.getDescripcionSucursal());
             comando.Parameters.AddWithValue("@IdProvincia", NuevaSucursal.getIdProvinciaSucursal());
@@ -66,28 +66,25 @@ namespace Datos
             return filasAfectadas;
         }
 
-        public void CargarDropDownList(string consultaSql, DropDownList ddl, string campoTexto, string campoValor)
+        public DataTable obtenerTablaPorOrden(DataTable DTSucursales, string orden)
         {
-            SqlConnection sqlConnection = new SqlConnection(Conexion);
+            SqlConnection conexion = new SqlConnection(Conexion);
+            conexion.Open();
+            string ConsultaSQL = "SELECT * FROM Sucursal INNET JOIN Provincia ON Id_Provincia = Id_ProvinciaSucursal ORDER BY Id_Sucursal " + orden;
 
-            sqlConnection.Open();
+            SqlCommand comando = new SqlCommand(ConsultaSQL, conexion);
+            SqlDataAdapter adaptador = new SqlDataAdapter(comando);
+            adaptador.Fill(DTSucursales);
 
-            SqlCommand sqlCommand = new SqlCommand(consultaSql, sqlConnection);
-            SqlDataReader reader = sqlCommand.ExecuteReader();
-
-            ddl.DataSource = reader;
-            ddl.DataTextField = campoTexto;
-            ddl.DataValueField = campoValor;
-            ddl.DataBind();
-            ddl.Items.Insert(0, new ListItem("--Seleccionar--", "0"));
-
-            reader.Close();
-            sqlConnection.Close();
+            conexion.Close();
+            return DTSucursales;
         }
+
+        
 
         public Boolean existeSucursal(Sucursales sucursal)
         {
-            String consulta = "Select * from Sucursales where NombreSucursal='" + sucursal.getNombreSucursal() + "'";
+            String consulta = "Select * from Sucursal where NombreSucursal='" + sucursal.getNombreSucursal() + "'";
             return existe(consulta);
         }
 
@@ -104,20 +101,19 @@ namespace Datos
             return estado;
         }
 
-        public int ObtenerMaximo()
+        public int eliminarSucursal(int idSucursal)
         {
-            int max = 0;
-            string consulta = "SELECT max(idSucursal) FROM Sucursales)";
-            SqlConnection Conexion = ObtenerConexion();
-            SqlCommand cmd = new SqlCommand(consulta, Conexion);
-            SqlDataReader datos = cmd.ExecuteReader();
-            if (datos.Read())
-            {
-                max = Convert.ToInt32(datos[0].ToString());
-            }
-            return max;
-        }
+            SqlConnection sqlConnection = new SqlConnection(Conexion);
+            sqlConnection.Open();
+            SqlCommand sqlCommand = new SqlCommand("DELETE FROM Sucursal WHERE Id_Sucursal = @Id_Sucursal", sqlConnection);
+            sqlCommand.Parameters.AddWithValue("@Id_Sucursal", idSucursal);
 
+
+            int filasAfectadas = sqlCommand.ExecuteNonQuery();
+            return filasAfectadas;
+            sqlConnection.Close();
+
+        }
 
         public void ObtenerSucursales( DataTable DTSucursales )
         {

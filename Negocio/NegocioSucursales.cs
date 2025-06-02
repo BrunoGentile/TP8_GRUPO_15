@@ -2,6 +2,7 @@
 using System.CodeDom;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,6 +27,37 @@ namespace Negocio
 
             return DTSucursales;
         }
+        public void ObtenerProvincias(DataTable DTProvincia)
+        {
+
+            //  DataTable DTProvincia = new DataTable();
+
+            gestionSucursales.ObtenerProvincias(DTProvincia);
+
+            //  return DTProvincia;
+
+        }
+
+        public DataTable OrdenDescendente(string orden) 
+        {
+            DataTable DtSucursales = new DataTable();
+            return  DtSucursales = gestionSucursales.obtenerTablaPorOrden(DtSucursales ,orden);
+
+            
+        }
+
+        public Boolean EliminarSucursal(int idSucursal)
+        {
+            int filaAfectadas = gestionSucursales.eliminarSucursal(idSucursal);
+            if (filaAfectadas != 0)
+            {
+                return true;
+            }
+            else 
+            {
+                return false;
+            }
+        }
 
         public bool AgregarSucursal(string NombreSucursal,string descripcion,int idProvincia, string direccion)
         {
@@ -36,7 +68,7 @@ namespace Negocio
             sucursal.setDescripcionSucursal(descripcion);
             sucursal.setIdProvinciaSucursal(idProvincia);
             sucursal.setDireccionSucursal(direccion);
-            if (gestionSucursales.existeSucursal(sucursal))
+            if (!gestionSucursales.existeSucursal(sucursal))
             {
                 cantidadFilas = gestionSucursales.AgregarSucursal(sucursal);
             }

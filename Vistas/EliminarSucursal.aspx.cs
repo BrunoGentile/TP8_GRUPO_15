@@ -17,5 +17,18 @@ namespace Vistas
         {
 
         }
+
+        protected void btnElminar_Click(object sender, EventArgs e)
+        {
+           NegocioSucursales neg = new NegocioSucursales();
+            if (neg.EliminarSucursal(int.Parse(TextBox1.Text)))
+            {
+                lblMensaje.Text = "se elimino correctamente";
+            }
+            else
+            {
+                lblMensaje.Text = "no se pudo eliminar la sucursal";
+            }
+        }
     }
 }

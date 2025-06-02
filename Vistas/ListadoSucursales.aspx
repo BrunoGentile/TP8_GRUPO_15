@@ -143,7 +143,9 @@
                     <td class="auto-style2">
                         <asp:Button ID="btn_MostrarTodo" runat="server" Text="Mostrar Todos" OnClick="btn_MostrarTodo_Click" />
                     </td>
-                    <td class="auto-style10"></td>
+                    <td class="auto-style10">
+                        <asp:Button ID="btn_FiltrarDesc" runat="server" OnClick="btn_FiltrarDesc_Click" Text="Orden Descendente" />
+                    </td>
                     <td class="auto-style10"></td>
                     <td class="auto-style19"></td>
                 </tr>

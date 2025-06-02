@@ -25,12 +25,12 @@ namespace Vistas
 
                 negocioSucursales.ObtenerProvincias(dt);
 
-                DropDownList2.DataSource = dt;
-                DropDownList2.DataTextField = "DescripcionProvincia";
-                DropDownList2.DataValueField = "Id_Provincia";
-                DropDownList2.DataBind();
+                ddlProvincia.DataSource = dt;
+                ddlProvincia.DataTextField = "DescripcionProvincia";
+                ddlProvincia.DataValueField = "Id_Provincia";
+                ddlProvincia.DataBind();
 
-                DropDownList2.Items.Insert(0, new ListItem("-- Seleccione una provincia --", "0")); // Opcional
+                ddlProvincia.Items.Insert(0, new ListItem("-- Seleccione una provincia --", "0")); // Opcional
             }
         }
 
@@ -46,6 +46,14 @@ namespace Vistas
             {
                 lblSucursalAgregada.Text = "La sucursal no se pudo agregar";
             }
+        }
+
+        public void limpiarLosCampos()
+        {
+            TB_NombreSucursal.Text = string.Empty;
+            TB_Direccion.Text= string.Empty;
+            TB_Descripcion.Text= string.Empty;
+            ddlProvincia.SelectedIndex = 0;
         }
     }
 }
