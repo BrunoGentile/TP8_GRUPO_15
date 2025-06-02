@@ -23,7 +23,7 @@ namespace Vistas
                 NegocioSucursales negocioSucursales = new NegocioSucursales();
                 DataTable dt = new DataTable();
 
-                negocioSucursales.ObtenerProvincias(dt);
+                //negocioSucursales.ObtenerProvincias(dt);
 
                 DropDownList2.DataSource = dt;
                 DropDownList2.DataTextField = "DescripcionProvincia";

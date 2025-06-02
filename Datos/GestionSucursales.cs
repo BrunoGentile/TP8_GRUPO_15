@@ -151,8 +151,24 @@ namespace Datos
         }
 
 
+        //existencia de id de sucursal para eliminarla
+        public bool ExisteSucursal(int idSucursal)
+        {
+            using (SqlConnection conexion = new SqlConnection(Conexion))
+            {
+                string consulta = "SELECT COUNT(*) FROM Sucursal WHERE Id_Sucursal = @id";
+                SqlCommand comando = new SqlCommand(consulta, conexion);
+                comando.Parameters.AddWithValue("@id", idSucursal);
+
+                conexion.Open();
+                int cantidad = (int)comando.ExecuteScalar();
+                return cantidad > 0;
+            }
+        }
+    }
+
 
 
 
     }
-}
+
