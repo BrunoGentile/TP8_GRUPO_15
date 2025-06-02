@@ -42,9 +42,13 @@ namespace Vistas
                 lblMensaje.Text = "La sucursal NO existe.";
                 txtIDSucursal.BackColor = System.Drawing.Color.Red;
                 lblMensaje.ForeColor = System.Drawing.Color.Red;
-
+                return;
             }
 
+            txtIDSucursal.Text = string.Empty;
+            lblMensaje.Text = string.Empty;
+            txtIDSucursal.BackColor = System.Drawing.Color.White;
+            lblMensaje.ForeColor = System.Drawing.Color.Black;
         }
     }
 }
