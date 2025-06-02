@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Data;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-
-using System.Data;
 using Entidades;
 using Negocio;
 
@@ -13,6 +12,7 @@ namespace Vistas
 {
     public partial class AgregarSucursal : System.Web.UI.Page
     {
+        NegocioSucursales neg = new NegocioSucursales();
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -20,7 +20,16 @@ namespace Vistas
 
         protected void BTN_Aceptar_Click(object sender, EventArgs e)
         {
+            Boolean estado = false;
+            estado = neg.AgregarSucursal(TB_NombreSucursal.Text,TB_Descripcion.Text , int.Parse(ddlProvincia.SelectedValue),TB_Direccion.Text);
+            if (estado == true)
+            {
             lblSucursalAgregada.Text = "La sucursal se ha agregado con éxito";
+            }
+            else
+            {
+                lblSucursalAgregada.Text = "La sucursal no se pudo agregar";
+            }
         }
     }
 } 

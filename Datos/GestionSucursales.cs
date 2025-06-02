@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
 using Entidades;
+using System.Web.UI.WebControls;
 
 namespace Datos
 {
@@ -14,10 +15,23 @@ namespace Datos
     {
 
         // CONEXION A LA BASE DE DATOS
-        private string Conexion = "Data Source=localhost\\sqlexpress; Initial Catalog=BDSucursales;Integrated Security = True";
+        private string Conexion = @"Data Source=localhost\SQLEXPRESS; Initial Catalog=BDSucursales;Integrated Security = True";
         // OBJETO DE LA CLASE SUCURSALES
         Sucursales Sucursal = new Sucursales();
 
+        private SqlConnection ObtenerConexion()
+        {
+            SqlConnection cn = new SqlConnection(Conexion);
+            try
+            {
+                cn.Open();
+                return cn;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
         // CONSTRUCTOR VACÍO
         public GestionSucursales() { 
             
@@ -30,25 +44,80 @@ namespace Datos
         }
 
         // MÉTODO PARA AGREGAR UNA NUEVA SUCURSAL UTILIZANDO LA CLASE SUCURSALES
-        public void AgregarSucursal( Sucursales NuevaSucursal )
+        public int AgregarSucursal( Sucursales NuevaSucursal )
         {
-
+            int filasAfectadas;
             SqlConnection conexion = new SqlConnection(Conexion);
 
             conexion.Open();
 
-            string ConsultaSQL = "INSERT INTO Sucursales (NombreSucursal, DescripcionSucursal, id_provinciaSucursal, DireccionSucursal) " + 
-                "VALUES (@Nombre, @Descripcion, @IdProvincia, @Direccion)";
+            string ConsultaSQL = "INSERT INTO Sucursales (IdSucursal, NombreSucursal, DescripcionSucursal, id_provinciaSucursal, DireccionSucursal) " + 
+                "VALUES (@IdSucursal, @Nombre, @Descripcion, @IdProvincia, @Direccion)";
             SqlCommand comando = new SqlCommand(ConsultaSQL, conexion);
-              
+
+            comando.Parameters.AddWithValue("IdSucursal", ObtenerMaximo()+1);
             comando.Parameters.AddWithValue("@Nombre", NuevaSucursal.getNombreSucursal());
             comando.Parameters.AddWithValue("@Descripcion", NuevaSucursal.getDescripcionSucursal());
             comando.Parameters.AddWithValue("@IdProvincia", NuevaSucursal.getIdProvinciaSucursal());
             comando.Parameters.AddWithValue("@Direccion", NuevaSucursal.getDireccionSucursal());
             
-            comando.ExecuteNonQuery();
+            filasAfectadas = comando.ExecuteNonQuery();
             conexion.Close();
+            return filasAfectadas;
         }
+
+        public void CargarDropDownList(string consultaSql, DropDownList ddl, string campoTexto, string campoValor)
+        {
+            SqlConnection sqlConnection = new SqlConnection(Conexion);
+
+            sqlConnection.Open();
+
+            SqlCommand sqlCommand = new SqlCommand(consultaSql, sqlConnection);
+            SqlDataReader reader = sqlCommand.ExecuteReader();
+
+            ddl.DataSource = reader;
+            ddl.DataTextField = campoTexto;
+            ddl.DataValueField = campoValor;
+            ddl.DataBind();
+            ddl.Items.Insert(0, new ListItem("--Seleccionar--", "0"));
+
+            reader.Close();
+            sqlConnection.Close();
+        }
+
+        public Boolean existeSucursal(Sucursales sucursal)
+        {
+            String consulta = "Select * from Sucursales where NombreSucursal='" + sucursal.getNombreSucursal() + "'";
+            return existe(consulta);
+        }
+
+        public Boolean existe(String consulta)
+        {
+            Boolean estado = false;
+            SqlConnection Conexion = ObtenerConexion();
+            SqlCommand cmd = new SqlCommand(consulta, Conexion);
+            SqlDataReader datos = cmd.ExecuteReader();
+            if (datos.Read())
+            {
+                estado = true;
+            }
+            return estado;
+        }
+
+        public int ObtenerMaximo()
+        {
+            int max = 0;
+            string consulta = "SELECT max(idSucursal) FROM Sucursales)";
+            SqlConnection Conexion = ObtenerConexion();
+            SqlCommand cmd = new SqlCommand(consulta, Conexion);
+            SqlDataReader datos = cmd.ExecuteReader();
+            if (datos.Read())
+            {
+                max = Convert.ToInt32(datos[0].ToString());
+            }
+            return max;
+        }
+
 
         public void ObtenerSucursales( DataTable DTSucursales )
         {
