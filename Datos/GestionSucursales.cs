@@ -52,19 +52,14 @@ namespace Datos
 
             conexion.Open();
 
-<<<<<<< HEAD
+
             string ConsultaSQL = "INSERT INTO Sucursal (NombreSucursal, DescripcionSucursal, Id_ProvinciaSucursal, DireccionSucursal) " + 
                 "VALUES ( @Nombre, @Descripcion, @IdProvincia, @Direccion)";
             SqlCommand comando = new SqlCommand(ConsultaSQL, conexion);
 
        
-=======
-            string ConsultaSQL = "INSERT INTO Sucursales (IdSucursal, NombreSucursal, DescripcionSucursal, id_provinciaSucursal, DireccionSucursal) " +
-                "VALUES (@IdSucursal, @Nombre, @Descripcion, @IdProvincia, @Direccion)";
-            SqlCommand comando = new SqlCommand(ConsultaSQL, conexion);
 
-            comando.Parameters.AddWithValue("IdSucursal", ObtenerMaximo() + 1);
->>>>>>> .
+
             comando.Parameters.AddWithValue("@Nombre", NuevaSucursal.getNombreSucursal());
             comando.Parameters.AddWithValue("@Descripcion", NuevaSucursal.getDescripcionSucursal());
             comando.Parameters.AddWithValue("@IdProvincia", NuevaSucursal.getIdProvinciaSucursal());

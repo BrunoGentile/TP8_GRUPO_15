@@ -87,18 +87,6 @@ namespace Negocio
         }
 
 
-
-        public void ObtenerProvincias(DataTable DTProvincia)
-        {
-
-            //  DataTable DTProvincia = new DataTable();
-
-            gestionSucursales.ObtenerProvincias(DTProvincia);
-
-            //  return DTProvincia;
-
-
-
         }
     }
-}   
+   

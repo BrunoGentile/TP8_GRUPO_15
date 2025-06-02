@@ -95,7 +95,7 @@
                         <asp:Label ID="lblSucursal" runat="server" Text="Ingresar ID Surcursal: "></asp:Label>
                     </td>
                     <td class="auto-style11">
-                        <asp:TextBox ID="txtIDSucursal" runat="server" Width="272px"></asp:TextBox>
+                        <asp:TextBox ID="txtIDSucursal" runat="server" Width="272px" oninput="this.style.backgroundColor='white';"></asp:TextBox>
                     </td>
                     <td class="auto-style17">
                         <asp:Button ID="btnElminar" runat="server" Text="Eliminar" OnClick="btnElminar_Click" />

@@ -56,7 +56,7 @@ namespace Vistas
 
         }
 
-<<<<<<< HEAD
+
         protected void btn_FiltrarDesc_Click(object sender, EventArgs e)
         {
 
@@ -66,13 +66,11 @@ namespace Vistas
             gvSucursales.DataBind();
         }
 
+        protected void DDL_FiltrarProvincia_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Tu lógica aquí
+        }
     }
 }
-=======
-    } 
-}
+ 
 
-    
-
-    
->>>>>>> .
