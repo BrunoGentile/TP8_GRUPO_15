@@ -59,10 +59,10 @@ namespace Negocio
             }
         }
 
-        public bool AgregarSucursal(string NombreSucursal,string descripcion,int idProvincia, string direccion)
+        public bool AgregarSucursal(string NombreSucursal, string descripcion, int idProvincia, string direccion)
         {
-            int cantidadFilas=0;
-            
+            int cantidadFilas = 0;
+
             Sucursales sucursal = new Sucursales();
             sucursal.setNombreSucursal(NombreSucursal);
             sucursal.setDescripcionSucursal(descripcion);
@@ -75,9 +75,9 @@ namespace Negocio
 
             if (cantidadFilas == 1)
                 return true;
-            else 
+            else
                 return false;
-        
+
         }
 
         //existencia de id para eliminarlo
@@ -86,5 +86,19 @@ namespace Negocio
             return gestionSucursales.ExisteSucursal(idSucursal);
         }
 
+
+
+        public void ObtenerProvincias(DataTable DTProvincia)
+        {
+
+            //  DataTable DTProvincia = new DataTable();
+
+            gestionSucursales.ObtenerProvincias(DTProvincia);
+
+            //  return DTProvincia;
+
+
+
+        }
     }
-}
+}   

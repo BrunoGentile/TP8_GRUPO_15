@@ -33,34 +33,43 @@ namespace Datos
             }
         }
         // CONSTRUCTOR VACÍO
-        public GestionSucursales() { 
-            
+        public GestionSucursales()
+        {
+
         }
 
         // CONSTRUCTOR CON PARÁMETROS
-        public GestionSucursales( Sucursales Sucursal )
+        public GestionSucursales(Sucursales Sucursal)
         {
             this.Sucursal = Sucursal;
         }
 
         // MÉTODO PARA AGREGAR UNA NUEVA SUCURSAL UTILIZANDO LA CLASE SUCURSALES
-        public int AgregarSucursal( Sucursales NuevaSucursal )
+        public int AgregarSucursal(Sucursales NuevaSucursal)
         {
             int filasAfectadas;
             SqlConnection conexion = new SqlConnection(Conexion);
 
             conexion.Open();
 
+<<<<<<< HEAD
             string ConsultaSQL = "INSERT INTO Sucursal (NombreSucursal, DescripcionSucursal, Id_ProvinciaSucursal, DireccionSucursal) " + 
                 "VALUES ( @Nombre, @Descripcion, @IdProvincia, @Direccion)";
             SqlCommand comando = new SqlCommand(ConsultaSQL, conexion);
 
        
+=======
+            string ConsultaSQL = "INSERT INTO Sucursales (IdSucursal, NombreSucursal, DescripcionSucursal, id_provinciaSucursal, DireccionSucursal) " +
+                "VALUES (@IdSucursal, @Nombre, @Descripcion, @IdProvincia, @Direccion)";
+            SqlCommand comando = new SqlCommand(ConsultaSQL, conexion);
+
+            comando.Parameters.AddWithValue("IdSucursal", ObtenerMaximo() + 1);
+>>>>>>> .
             comando.Parameters.AddWithValue("@Nombre", NuevaSucursal.getNombreSucursal());
             comando.Parameters.AddWithValue("@Descripcion", NuevaSucursal.getDescripcionSucursal());
             comando.Parameters.AddWithValue("@IdProvincia", NuevaSucursal.getIdProvinciaSucursal());
             comando.Parameters.AddWithValue("@Direccion", NuevaSucursal.getDireccionSucursal());
-            
+
             filasAfectadas = comando.ExecuteNonQuery();
             conexion.Close();
             return filasAfectadas;
@@ -115,15 +124,15 @@ namespace Datos
 
         }
 
-        public void ObtenerSucursales( DataTable DTSucursales )
+        public void ObtenerSucursales(DataTable DTSucursales)
         {
-            
+
             SqlConnection conexion = new SqlConnection(Conexion);
             conexion.Open();
 
             string ConsultaSQL = "SELECT Id_Sucursal, NombreSucursal, DescripcionSucursal, DescripcionProvincia , DireccionSucursal " +
                 "FROM Sucursal INNER JOIN Provincia ON Id_Provincia = Id_ProvinciaSucursal";
-            
+
             SqlCommand comando = new SqlCommand(ConsultaSQL, conexion);
             SqlDataAdapter adaptador = new SqlDataAdapter(comando);
             adaptador.Fill(DTSucursales);
@@ -161,10 +170,10 @@ namespace Datos
                 return cantidad > 0;
             }
         }
+
+
+      
+
     }
-
-
-
-
-    }
+}
 

@@ -195,7 +195,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style24">
-                        <asp:DropDownList ID="DDL_FiltrarProvincia" runat="server" AutoPostBack="True">
+                        <asp:DropDownList ID="DDL_FiltrarProvincia" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DDL_FiltrarProvincia_SelectedIndexChanged">
                         </asp:DropDownList>
                     </td>
                     <td class="auto-style16">&nbsp;</td>

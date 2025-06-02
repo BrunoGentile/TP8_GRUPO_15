@@ -8,6 +8,8 @@ using System.Web.UI.WebControls;
 using System.Data;
 using Entidades;
 using Negocio;
+using static System.Collections.Specialized.BitVector32;
+using System.Data.SqlClient;
 
 namespace Vistas
 {
@@ -22,8 +24,25 @@ namespace Vistas
                 gvSucursales.DataSource = negocioSucursales.ObtenerSucursales();
                 // ACTUALIZO EL GRID VIEW CON LOS DATOS OBTENIDOS
                 gvSucursales.DataBind();
+
+
+                DataTable dt = new DataTable();
+
+                negocioSucursales.ObtenerProvincias(dt);
+
+                DDL_FiltrarProvincia.DataSource = dt;
+                DDL_FiltrarProvincia.DataTextField = "DescripcionProvincia";
+                DDL_FiltrarProvincia.DataValueField = "Id_Provincia";
+                DDL_FiltrarProvincia.DataBind();
+
+                DDL_FiltrarProvincia.Items.Insert(0, new ListItem("-- Seleccione una provincia --", "0")); // Opcional
             }
+
+
+
+
         }
+        
 
         protected void btn_MostrarTodo_Click(object sender, EventArgs e)
         {
@@ -37,6 +56,7 @@ namespace Vistas
 
         }
 
+<<<<<<< HEAD
         protected void btn_FiltrarDesc_Click(object sender, EventArgs e)
         {
 
@@ -48,3 +68,11 @@ namespace Vistas
 
     }
 }
+=======
+    } 
+}
+
+    
+
+    
+>>>>>>> .
