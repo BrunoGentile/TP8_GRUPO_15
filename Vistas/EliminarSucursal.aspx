@@ -50,7 +50,7 @@
                 <tr>
                     <td class="auto-style13">&nbsp;</td>
                     <td class="auto-style11">
-                        <asp:HyperLink ID="hlAgregarSucursal" runat="server" NavigateUrl="~/AgregarSucursal - Copia.aspx">Agregar Sucursal</asp:HyperLink>
+                        <asp:HyperLink ID="hlAgregarSucursal" runat="server" NavigateUrl="~/AgregarSucursal.aspx">Agregar Sucursal</asp:HyperLink>
                     </td>
                     <td class="auto-style17">
                         &nbsp;</td>
