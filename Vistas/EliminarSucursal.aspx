@@ -21,10 +21,24 @@
             height: 23px;
         }
         .auto-style13 {
-            width: 190px;
+            width: 169px;
         }
         .auto-style14 {
-            width: 190px;
+            width: 169px;
+            height: 23px;
+        }
+        .auto-style15 {
+            width: 132px;
+        }
+        .auto-style16 {
+            width: 132px;
+            height: 23px;
+        }
+        .auto-style17 {
+            width: 48px;
+        }
+        .auto-style18 {
+            width: 48px;
             height: 23px;
         }
     </style>
@@ -38,7 +52,9 @@
                     <td class="auto-style11">
                         <asp:HyperLink ID="hlAgregarSucursal" runat="server" NavigateUrl="~/AgregarSucursal - Copia.aspx">Agregar Sucursal</asp:HyperLink>
                     </td>
-                    <td class="auto-style11">
+                    <td class="auto-style17">
+                        &nbsp;</td>
+                    <td class="auto-style15">
                         <asp:HyperLink ID="hlListadoSucursales" runat="server" NavigateUrl="~/ListadoSucursales.aspx">Listado de sucursales</asp:HyperLink>
                     </td>
                     <td class="auto-style11">
@@ -50,7 +66,8 @@
                 <tr>
                     <td class="auto-style14"></td>
                     <td class="auto-style12">&nbsp;</td>
-                    <td class="auto-style12"></td>
+                    <td class="auto-style18"></td>
+                    <td class="auto-style16">&nbsp;</td>
                     <td class="auto-style12"></td>
                     <td class="auto-style5"></td>
                     <td class="auto-style5"></td>
@@ -58,7 +75,8 @@
                 <tr>
                     <td class="auto-style14"><strong>Eliminar Sucursal</strong></td>
                     <td class="auto-style12"></td>
-                    <td class="auto-style12"></td>
+                    <td class="auto-style18"></td>
+                    <td class="auto-style16">&nbsp;</td>
                     <td class="auto-style12"></td>
                     <td class="auto-style5"></td>
                     <td class="auto-style5"></td>
@@ -66,41 +84,52 @@
                 <tr>
                     <td class="auto-style13">&nbsp;</td>
                     <td class="auto-style11">&nbsp;</td>
-                    <td class="auto-style11">&nbsp;</td>
+                    <td class="auto-style17">&nbsp;</td>
+                    <td class="auto-style15">&nbsp;</td>
                     <td class="auto-style11">&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style13">&nbsp;</td>
-                    <td class="auto-style11">&nbsp;</td>
-                    <td class="auto-style11">&nbsp;</td>
+                    <td class="auto-style13">
+                        <asp:Label ID="lblSucursal" runat="server" Text="Ingresar ID Surcursal: "></asp:Label>
+                    </td>
                     <td class="auto-style11">
+                        <asp:TextBox ID="TextBox1" runat="server" Width="272px"></asp:TextBox>
+                    </td>
+                    <td class="auto-style17">
                         <asp:Button ID="btnElminar" runat="server" Text="Eliminar" />
                     </td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="auto-style13">&nbsp;</td>
-                    <td class="auto-style11">&nbsp;</td>
-                    <td class="auto-style11">&nbsp;</td>
-                    <td class="auto-style11">&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="auto-style13">&nbsp;</td>
-                    <td class="auto-style11">&nbsp;</td>
-                    <td class="auto-style11">&nbsp;</td>
-                    <td class="auto-style11">&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="auto-style13">&nbsp;</td>
-                    <td class="auto-style11">&nbsp;</td>
+                    <td class="auto-style15">&nbsp;</td>
                     <td class="auto-style11">
+                        &nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="auto-style13">&nbsp;</td>
+                    <td class="auto-style11">&nbsp;</td>
+                    <td class="auto-style17">&nbsp;</td>
+                    <td class="auto-style15">&nbsp;</td>
+                    <td class="auto-style11">&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="auto-style13">&nbsp;</td>
+                    <td class="auto-style11">&nbsp;</td>
+                    <td class="auto-style17">&nbsp;</td>
+                    <td class="auto-style15">&nbsp;</td>
+                    <td class="auto-style11">&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="auto-style13">&nbsp;</td>
+                    <td class="auto-style11">&nbsp;</td>
+                    <td class="auto-style17">
+                        &nbsp;</td>
+                    <td class="auto-style15">
                         &nbsp;</td>
                     <td class="auto-style11">&nbsp;</td>
                     <td>&nbsp;</td>
@@ -110,13 +139,16 @@
                     <td class="auto-style13">
                         &nbsp;</td>
                     <td class="auto-style11">&nbsp;</td>
-                    <td class="auto-style11">&nbsp;</td>
+                    <td class="auto-style17">&nbsp;</td>
+                    <td class="auto-style15">&nbsp;</td>
                     <td class="auto-style11">&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style14"></td>
                     <td class="auto-style12">&nbsp;</td>
-                    <td class="auto-style12">
+                    <td class="auto-style18">
+                        &nbsp;</td>
+                    <td class="auto-style16">
                         &nbsp;</td>
                     <td class="auto-style12"></td>
                     <td class="auto-style5"></td>
@@ -125,7 +157,8 @@
                 <tr>
                     <td class="auto-style13">&nbsp;</td>
                     <td class="auto-style11">&nbsp;</td>
-                    <td class="auto-style11">&nbsp;</td>
+                    <td class="auto-style17">&nbsp;</td>
+                    <td class="auto-style15">&nbsp;</td>
                     <td class="auto-style11">&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
@@ -133,7 +166,9 @@
                 <tr>
                     <td class="auto-style13">&nbsp;</td>
                     <td class="auto-style11">&nbsp;</td>
-                    <td class="auto-style11">
+                    <td class="auto-style17">
+                        &nbsp;</td>
+                    <td class="auto-style15">
                         &nbsp;</td>
                     <td class="auto-style11">&nbsp;</td>
                     <td>&nbsp;</td>
