@@ -132,7 +132,10 @@
                     <td class="auto-style5"></td>
                 </tr>
                 <tr>
-                    <td class="auto-style14"></td>
+                    <td class="auto-style14">
+                        <asp:DropDownList ID="ddlSucursalesDisponibles" runat="server">
+                        </asp:DropDownList>
+                    </td>
                     <td class="auto-style12"></td>
                     <td class="auto-style18">
                         </td>
