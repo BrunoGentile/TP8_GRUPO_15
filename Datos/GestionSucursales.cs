@@ -135,5 +135,24 @@ namespace Datos
             conexion.Close();
         }
 
+
+        public void ObtenerProvincias(DataTable dtProvincias)
+        {
+            SqlConnection conexion = new SqlConnection(Conexion);
+            conexion.Open();
+
+            string consultaSQL = "SELECT Id_Provincia, DescripcionProvincia FROM Provincia";
+
+            SqlCommand comando = new SqlCommand(consultaSQL, conexion);
+            SqlDataAdapter adaptador = new SqlDataAdapter(comando);
+            adaptador.Fill(dtProvincias);
+
+            conexion.Close();
+        }
+
+
+
+
+
     }
 }

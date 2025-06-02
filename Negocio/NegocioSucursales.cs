@@ -19,7 +19,7 @@ namespace Negocio
 
         public DataTable ObtenerSucursales()
         {
-            
+
             DataTable DTSucursales = new DataTable();
 
             gestionSucursales.ObtenerSucursales(DTSucursales);
