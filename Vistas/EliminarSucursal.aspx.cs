@@ -25,15 +25,24 @@ namespace Vistas
 
             if (negocio.VerificarExistenciaSucursal(id))
             {
-                lblMensaje.Text = "La sucursal existe.";
-                lblMensaje.ForeColor = System.Drawing.Color.Green;
-                txtIDSucursal.BackColor = System.Drawing.Color.White;
+                if (negocio.EliminarSucursal(id))
+                {
+                    lblMensaje.Text = "se elimino correctamente";
+                    lblMensaje.ForeColor = System.Drawing.Color.Green;
+                    txtIDSucursal.BackColor = System.Drawing.Color.White;
+                }
+               
+                 else
+                 {
+                    lblMensaje.Text = "no se pudo eliminar la sucursal";
+                 }
             }
             else
             {
                 lblMensaje.Text = "La sucursal NO existe.";
-                lblMensaje.ForeColor = System.Drawing.Color.Red;
                 txtIDSucursal.BackColor = System.Drawing.Color.Red;
+                lblMensaje.ForeColor = System.Drawing.Color.Red;
+
             }
 
         }

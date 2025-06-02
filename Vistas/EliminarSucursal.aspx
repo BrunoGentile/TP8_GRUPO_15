@@ -119,8 +119,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style14">
-                        <asp:Label ID="lblMensaje" runat="server"></asp:Label>
-                    </td>
+                        &nbsp;</td>
                     <td class="auto-style12">&nbsp;</td>
                     <td class="auto-style18"></td>
                     <td class="auto-style16"></td>
