@@ -80,5 +80,11 @@ namespace Negocio
         
         }
 
+        //existencia de id para eliminarlo
+        public bool VerificarExistenciaSucursal(int idSucursal)
+        {
+            return gestionSucursales.ExisteSucursal(idSucursal);
+        }
+
     }
 }

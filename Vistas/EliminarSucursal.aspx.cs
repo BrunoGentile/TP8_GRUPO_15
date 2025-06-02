@@ -17,18 +17,25 @@ namespace Vistas
         {
 
         }
-
         protected void btnElminar_Click(object sender, EventArgs e)
         {
-           NegocioSucursales neg = new NegocioSucursales();
-            if (neg.EliminarSucursal(int.Parse(TextBox1.Text)))
+            int id = int.Parse(txtIDSucursal.Text.Trim());  // Asumo que siempre es un número válido
+
+            NegocioSucursales negocio = new NegocioSucursales();
+
+            if (negocio.VerificarExistenciaSucursal(id))
             {
-                lblMensaje.Text = "se elimino correctamente";
+                lblMensaje.Text = "La sucursal existe.";
+                lblMensaje.ForeColor = System.Drawing.Color.Green;
+                txtIDSucursal.BackColor = System.Drawing.Color.White;
             }
             else
             {
-                lblMensaje.Text = "no se pudo eliminar la sucursal";
+                lblMensaje.Text = "La sucursal NO existe.";
+                lblMensaje.ForeColor = System.Drawing.Color.Red;
+                txtIDSucursal.BackColor = System.Drawing.Color.Red;
             }
+
         }
     }
 }

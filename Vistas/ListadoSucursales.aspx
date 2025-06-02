@@ -194,7 +194,10 @@
                     <td class="auto-style30"></td>
                 </tr>
                 <tr>
-                    <td class="auto-style24">&nbsp;</td>
+                    <td class="auto-style24">
+                        <asp:DropDownList ID="DDL_FiltrarProvincia" runat="server" AutoPostBack="True">
+                        </asp:DropDownList>
+                    </td>
                     <td class="auto-style16">&nbsp;</td>
                     <td class="auto-style38">&nbsp;</td>
                     <td>&nbsp;</td>

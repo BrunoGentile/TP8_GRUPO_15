@@ -95,7 +95,7 @@
                         <asp:Label ID="lblSucursal" runat="server" Text="Ingresar ID Surcursal: "></asp:Label>
                     </td>
                     <td class="auto-style11">
-                        <asp:TextBox ID="TextBox1" runat="server" Width="272px"></asp:TextBox>
+                        <asp:TextBox ID="txtIDSucursal" runat="server" Width="272px"></asp:TextBox>
                     </td>
                     <td class="auto-style17">
                         <asp:Button ID="btnElminar" runat="server" Text="Eliminar" OnClick="btnElminar_Click" />
@@ -108,7 +108,9 @@
                 </tr>
                 <tr>
                     <td class="auto-style13">&nbsp;</td>
-                    <td class="auto-style11">&nbsp;</td>
+                    <td class="auto-style11">
+                        <asp:Label ID="lblMensaje" runat="server"></asp:Label>
+                    </td>
                     <td class="auto-style17">&nbsp;</td>
                     <td class="auto-style15">&nbsp;</td>
                     <td class="auto-style11">&nbsp;</td>
