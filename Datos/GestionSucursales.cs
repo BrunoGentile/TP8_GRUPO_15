@@ -166,9 +166,23 @@ namespace Datos
             }
         }
 
+        public void ObtenerSucursalPorID(int idSucursal, DataTable DTSucursal)
+        {
+            SqlConnection conexion = new SqlConnection(Conexion);
+            conexion.Open();
 
-      
+            string consultaSQL = "SELECT Id_Sucursal, NombreSucursal, DescripcionSucursal, DescripcionProvincia, DireccionSucursal " +
+                                 "FROM Sucursal INNER JOIN Provincia ON Id_Provincia = Id_ProvinciaSucursal " +
+                                 "WHERE Id_Sucursal = @IdSucursal";
 
+            SqlCommand comando = new SqlCommand(consultaSQL, conexion);
+            comando.Parameters.AddWithValue("@IdSucursal", idSucursal);
+
+            SqlDataAdapter adaptador = new SqlDataAdapter(comando);
+            adaptador.Fill(DTSucursal);
+
+            conexion.Close();
+        }
     }
 }
 

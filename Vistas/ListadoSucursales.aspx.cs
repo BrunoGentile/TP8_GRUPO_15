@@ -54,6 +54,8 @@ namespace Vistas
             // ACTUALIZO EL GRID VIEW CON LOS DATOS OBTENIDOS
             gvSucursales.DataBind();
 
+            TextBox1.Text = string.Empty;
+
         }
 
 
@@ -64,11 +66,27 @@ namespace Vistas
             NegocioSucursales neg = new NegocioSucursales();
             gvSucursales.DataSource = neg.OrdenDescendente(Session["ordenSucursales"].ToString());
             gvSucursales.DataBind();
+
+            TextBox1.Text = string.Empty;
         }
 
         protected void DDL_FiltrarProvincia_SelectedIndexChanged(object sender, EventArgs e)
         {
             // Tu lógica aquí
+        }
+
+        protected void btn_Filtrar_Click(object sender, EventArgs e)
+        {
+            string idSucursalTexto = TextBox1.Text.Trim();
+
+            if (int.TryParse(idSucursalTexto, out int idSucursal))
+            {
+                NegocioSucursales negocio = new NegocioSucursales();
+                gvSucursales.DataSource = negocio.FiltrarSucursalPorID(idSucursal);
+                gvSucursales.DataBind();
+            }
+
+            TextBox1.Text = string.Empty;
         }
     }
 }

@@ -138,7 +138,7 @@
                         <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
                     </td>
                     <td class="auto-style39">
-                        <asp:Button ID="btn_Filtrar" runat="server" Text="Filtrar" />
+                        <asp:Button ID="btn_Filtrar" runat="server" Text="Filtrar" OnClick="btn_Filtrar_Click" />
                     </td>
                     <td class="auto-style2">
                         <asp:Button ID="btn_MostrarTodo" runat="server" Text="Mostrar Todos" OnClick="btn_MostrarTodo_Click" />

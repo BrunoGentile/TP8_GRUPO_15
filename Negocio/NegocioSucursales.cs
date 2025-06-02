@@ -38,12 +38,12 @@ namespace Negocio
 
         }
 
-        public DataTable OrdenDescendente(string orden) 
+        public DataTable OrdenDescendente(string orden)
         {
             DataTable DtSucursales = new DataTable();
-            return  DtSucursales = gestionSucursales.obtenerTablaPorOrden(DtSucursales ,orden);
+            return DtSucursales = gestionSucursales.obtenerTablaPorOrden(DtSucursales, orden);
 
-            
+
         }
 
         public Boolean EliminarSucursal(int idSucursal)
@@ -53,7 +53,7 @@ namespace Negocio
             {
                 return true;
             }
-            else 
+            else
             {
                 return false;
             }
@@ -86,7 +86,14 @@ namespace Negocio
             return gestionSucursales.ExisteSucursal(idSucursal);
         }
 
-
+        public DataTable FiltrarSucursalPorID(int idSucursal)
+        {
+            DataTable DTSucursal = new DataTable();
+            gestionSucursales.ObtenerSucursalPorID(idSucursal, DTSucursal);
+            return DTSucursal;
         }
+
+
+    }
     }
    
