@@ -15,6 +15,10 @@ namespace Vistas
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                CargarSucursales();
+            }
 
         }
         protected void btnElminar_Click(object sender, EventArgs e)
@@ -30,6 +34,9 @@ namespace Vistas
                     lblMensaje.Text = "se elimino correctamente";
                     lblMensaje.ForeColor = System.Drawing.Color.Green;
                     txtIDSucursal.BackColor = System.Drawing.Color.White;
+
+                    CargarSucursales();
+
                 }
                
                  else
@@ -50,5 +57,23 @@ namespace Vistas
             txtIDSucursal.BackColor = System.Drawing.Color.White;
             lblMensaje.ForeColor = System.Drawing.Color.Black;
         }
+
+        private void CargarSucursales()
+        {
+            NegocioSucursales negocio = new NegocioSucursales();
+            DataTable dt = negocio.ObtenerSucursales();
+
+            ddlSucursalesDisponibles.Items.Clear();
+            ddlSucursalesDisponibles.Items.Add(new ListItem("-- Seleccionar sucursal --", "0"));
+
+            foreach (DataRow row in dt.Rows)
+            {
+                string texto = row["Id_Sucursal"].ToString() + " - " + row["NombreSucursal"].ToString();
+                string valor = row["Id_Sucursal"].ToString();
+                ddlSucursalesDisponibles.Items.Add(new ListItem(texto, valor));
+            }
+        }
+
+
     }
 }
